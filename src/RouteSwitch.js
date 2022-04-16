@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import React from 'react';
 import App from './App.js';
 import Profile from './Profile.js';
@@ -8,28 +8,11 @@ import Tweet from './Tweet.js'
 const RouteSwitch = () => {
   return (
     <BrowserRouter>
-      <div>
-        <a
-          href="/profile"
-        >
-          Profile
-        </a>
-      </div>
-      <div>
-        <a
-          href="/djkhaled"
-        >
-          DJ KHALED
-        </a>
-      </div>
-      <div>
-        <a
-          href="/tweet"
-        >
-          Tweet
-        </a>
-      </div>
-
+      <nav>
+        <Link to="/profile">Profile </Link>|{" "}
+        <Link to="/djkhaled">DJ Khaled </Link>|{" "}
+        <Link to="/tweet">Tweet </Link>
+      </nav>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/profile" element={<Profile />} />
